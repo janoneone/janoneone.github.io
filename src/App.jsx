@@ -6,21 +6,19 @@ function App() {
       title: "AI Support Hub",
       description:
         "Plataforma de soporte empresarial con chatbot de IA, gestión de conversaciones y creación automática de tickets.",
-      technologies: [
-        ".NET 8",
+      technologies: 
+      [
+        ".NET 10",
         "C#",
         "React",
-        "SQL Server",
+        "Azure SQL",
         "Dapper",
-        "OpenAI",
+        "Gemini",
         "n8n",
+        "Docker"
       ],
-      highlights: [
-        "API REST desarrollada en .NET 8",
-        "Persistencia de conversaciones y tickets",
-        "Integración con IA",
-        "Automatización de correos y tickets mediante n8n",
-      ],
+      demoUrl: "https://ai-support-hub-ashy.vercel.app/",
+      githubUrl: "https://github.com/janoneone/AI-Support-Hub"
     },
     {
       title: "Sistema de Gestión y Automatización",
@@ -56,22 +54,25 @@ function App() {
   ];
 
   const skills = [
-    "C#",
-    ".NET",
-    ".NET 8",
-    "ASP.NET",
-    "REST API",
-    "SOAP",
-    "SQL Server",
-    "Oracle",
-    "Dapper",
-    "React",
-    "JavaScript",
-    "Git",
-    "n8n",
-    "OpenAI",
-    "SonarCloud",
-  ];
+  "C#",
+  ".NET",
+  ".NET 10",
+  "ASP.NET",
+  "REST API",
+  "SOAP",
+  "SQL Server",
+  "Azure SQL",
+  "Oracle",
+  "Dapper",
+  "React",
+  "JavaScript",
+  "Git",
+  "Docker",
+  "n8n",
+  "Gemini",
+  "OpenAI",
+  "SonarCloud",
+];
 
   return (
     <div>
@@ -108,7 +109,7 @@ function App() {
             </a>
 
             <a
-              href="https://github.com/TU-USUARIO"
+              href="https://github.com/janoneone"
               target="_blank"
               className="secondary-button"
             >
@@ -152,30 +153,58 @@ function App() {
         </section>
 
         <section id="projects">
-          <h2 className="section-title">Proyectos destacados</h2>
+  <h2 className="section-title">Proyectos destacados</h2>
 
-          <div className="projects-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <h3>{project.title}</h3>
+  <div className="projects-grid">
+    {projects.map((project) => (
+      <article className="project-card" key={project.title}>
+        <h3>{project.title}</h3>
 
-                <p>{project.description}</p>
+        <p>{project.description}</p>
 
-                <div className="project-tech">
-                  {project.technologies.map((technology) => (
-                    <span key={technology}>{technology}</span>
-                  ))}
-                </div>
+        <div className="project-tech">
+          {project.technologies.map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
+        </div>
 
-                <ul>
-                  {project.highlights.map((highlight) => (
-                    <li key={highlight}>{highlight}</li>
-                  ))}
-                </ul>
-              </article>
+        {project.highlights && (
+          <ul>
+            {project.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
             ))}
+          </ul>
+        )}
+
+        {(project.demoUrl || project.githubUrl) && (
+          <div className="project-actions">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primary-button"
+              >
+                Ver Demo
+              </a>
+            )}
+
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="secondary-button"
+              >
+                Código
+              </a>
+            )}
           </div>
-        </section>
+        )}
+      </article>
+    ))}
+  </div>
+</section>
 
         <section id="contact" className="contact">
           <h2 className="section-title">Contacto</h2>
@@ -187,7 +216,7 @@ function App() {
 
           <div className="buttons">
             <a
-              href="https://www.linkedin.com/in/TU-LINKEDIN/"
+              href="https://www.linkedin.com/in/alejandrocastro01//"
               target="_blank"
               className="primary-button"
             >
@@ -195,7 +224,7 @@ function App() {
             </a>
 
             <a
-              href="mailto:TU-CORREO"
+              href="mailto:acastro.ma1@gmail.com"
               className="secondary-button"
             >
               Email

@@ -227,3 +227,10 @@ footer {
     font-size: 18px;
   }
 }
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
